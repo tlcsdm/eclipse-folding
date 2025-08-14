@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.jdt.ui.foldingStructureProviders">
+      <provider
+            preferencesClass="com.tlcsdm.eclipse.folding.java.preferences.EnhancedFoldingPreferenceBlock"
+            class="com.tlcsdm.eclipse.folding.java.EnhancedJavaFoldingStructureProvider"
+            name="Tlcsdm Java Folding"
+            id="com.tlcsdm.eclipse.folding.provider1"/>
+   </extension>   
+</plugin>

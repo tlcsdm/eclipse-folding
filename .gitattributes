@@ -1,0 +1,3 @@
+plugins/com.tlcsdm.eclipse.folding/about.html        linguist-vendored
+plugins/com.tlcsdm.eclipse.folding/epl-v20.html        linguist-vendored
+plugins/com.tlcsdm.eclipse.folding/help/**        linguist-vendored
