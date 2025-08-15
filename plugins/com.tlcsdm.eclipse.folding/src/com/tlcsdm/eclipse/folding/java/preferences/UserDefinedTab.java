@@ -11,7 +11,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
@@ -201,7 +201,7 @@ public class UserDefinedTab implements PreferencesTab {
 		viewer.setUseHashlookup(true);
 		viewer.setCellEditors(editors);
 		viewer.setCellModifier(new UserDefinedEntryModifier());
-		viewer.setSorter(new UserDefinedEntrySorter(2));
+		viewer.setComparator(new UserDefinedEntrySorter(2));
 
 		viewer.setContentProvider(new UserDefinedEntryContentProvider());
 		viewer.setLabelProvider(new UserDefinedEntryLabelProvider());
@@ -355,7 +355,7 @@ public class UserDefinedTab implements PreferencesTab {
 		}
 	}
 
-	private class UserDefinedEntrySorter extends ViewerSorter {
+	private class UserDefinedEntrySorter extends ViewerComparator {
 
 		private int criteria;
 
@@ -370,6 +370,7 @@ public class UserDefinedTab implements PreferencesTab {
 		 * org.eclipse.jface.viewers.ViewerSorter#compare(org.eclipse.jface.viewers.
 		 * Viewer, java.lang.Object, java.lang.Object)
 		 */
+		@Override
 		public int compare(Viewer viewer, Object e1, Object e2) {
 			UserDefinedEntry a = (UserDefinedEntry) e1;
 			UserDefinedEntry b = (UserDefinedEntry) e2;

@@ -40,6 +40,7 @@ public class UserDefinedStrategy extends CompositeCalculationStrategy {
 	 * com.tlcsdm.eclipse.folding.calculation.RegionCalculationStrategy#handle(int,
 	 * int, int, org.eclipse.jdt.core.IJavaElement)
 	 */
+	@SuppressWarnings("unchecked")
 	public void handle(int nextToken, int start, int end, IJavaElement owner) throws JavaModelException {
 		if (settings.isDefaultEnabled()) {
 			if (nextToken == ITerminalSymbols.TokenNameCOMMENT_LINE) {

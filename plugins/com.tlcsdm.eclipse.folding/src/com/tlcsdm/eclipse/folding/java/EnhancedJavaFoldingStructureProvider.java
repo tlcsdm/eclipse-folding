@@ -83,6 +83,7 @@ public class EnhancedJavaFoldingStructureProvider implements IJavaFoldingStructu
 	 * @see
 	 * org.eclipse.jdt.ui.text.folding.IJavaFoldingStructureProvider#initialize()
 	 */
+	@SuppressWarnings("restriction")
 	public void initialize() {
 
 		if (!isInstalled()) {
@@ -121,6 +122,7 @@ public class EnhancedJavaFoldingStructureProvider implements IJavaFoldingStructu
 		JavaCore.removeElementChangedListener(elementChangedListener);
 	}
 
+	@SuppressWarnings("restriction")
 	protected boolean supports(ITextEditor editor) {
 		return (editor instanceof JavaEditor);
 	}

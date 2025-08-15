@@ -26,13 +26,13 @@ public class Images {
 				FoldingPlugin.imageDescriptorFromPlugin("org.eclipse.jface.text",
 						"org/eclipse/jface/text/source/projection/images/expanded.png"));
 		registry.put(FoldingPlugin.getMessage("modern.icons.title") + ".collapsed",
-				ImageDescriptor.createFromFile(Images.class, "image/collapsed.gif"));
+				FoldingPlugin.imageDescriptorFromPlugin("com.tlcsdm.eclipse.folding", "icons/theme/collapsed.gif"));
 		registry.put(FoldingPlugin.getMessage("modern.icons.title") + ".expanded",
-				ImageDescriptor.createFromFile(Images.class, "image/expanded.gif"));
+				FoldingPlugin.imageDescriptorFromPlugin("com.tlcsdm.eclipse.folding", "icons/theme/expanded.gif"));
 
 		// TODO - constantify these
-		registry.put("CHECKED", ImageDescriptor.createFromFile(FoldingPlugin.class, "images/common/checked.gif"));
-		registry.put("UNCHECKED", ImageDescriptor.createFromFile(FoldingPlugin.class, "images/common/unchecked.gif"));
+		registry.put("CHECKED", ImageDescriptor.createFromFile(FoldingPlugin.class, "icons/checked.gif"));
+		registry.put("UNCHECKED", ImageDescriptor.createFromFile(FoldingPlugin.class, "icons/unchecked.gif"));
 	}
 
 	public Image getImage(String key) {

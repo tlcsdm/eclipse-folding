@@ -16,8 +16,6 @@ import com.tlcsdm.eclipse.folding.FoldingPlugin;
  */
 public abstract class AnnotationThemeFactory {
 
-	private static final String COLLAPSED_PATH = "images/collapsed.gif";
-	private static final String EXPANDED_PATH = "images/expanded.gif";
 	private static final DefaultAnnotationRangeIndicator defaultRangeIndicator = new DefaultAnnotationRangeIndicator();
 
 	private static Map images = new HashMap();
