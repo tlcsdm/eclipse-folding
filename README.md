@@ -1,32 +1,21 @@
 # Folding
 
-This plugin integrates translation capabilities into the Eclipse IDE.
+This plugin enhances code folding in Eclipse IDE, based on and maintained from Coffee-Bytes Code Folding.  
+It allows defining custom foldable regions in Java, XML, and other files using //[start] … //[end] comments, making code more organized and easier to navigate.
 
 Fork of the coffee-bytes code folding plugin. Original source: https://code.google.com/archive/p/coffee-bytes/
 
 ## Features
-- Supports Baidu, Youdao, etc (requires API credentials)
-- Translate selected text via context menu or keyboard shortcut
-- Provide Translation View for translation
-- Customize and switch translation providers from the status bar
-- Lightweight and easy to configure
+- Folding support for <em>classes, methods, field groups, imports, comments, and documentation</em>.
+- Custom Region Folding: Define your own folding markers (default [start] / [end]).
+- Deep integration with Eclipse JDT folding preferences to enable/disable folding for specific elements.
+- Customizable folding strategies in Preferences: Configure in Window → Preferences → Java → Editor → Folding.
+- Preserves Native Folding: Extends Eclipse’s folding system without removing built-in features.
 
 ## Use
-1. Translate selected text via context menu or keyboard shortcut  
-shortcut: Ctrl + Alt + T   
-![screenshot](https://raw.github.com/tlcsdm/eclipse-translation/master/plugins/com.tlcsdm.eclipse.translation/help/images/popup.png)
-
-2. Translation View  
-Click Window - Show View - Other... - Plug-in Development - Translation View  
-![screenshot](https://raw.github.com/tlcsdm/eclipse-translation/master/plugins/com.tlcsdm.eclipse.translation/help/images/translate_view.png)
-
-3. Customize and switch translation providers from the status bar  
-On the right side of the eclipse status bar  
-![screenshot](https://raw.github.com/tlcsdm/eclipse-translation/master/plugins/com.tlcsdm.eclipse.translation/help/images/status.png)
-
-4. Preferences 
-Click Window - Preferences - Translation  
-![screenshot](https://raw.github.com/tlcsdm/eclipse-translation/master/plugins/com.tlcsdm.eclipse.translation/help/images/pref.png)
+1. Preferences 
+Click Window → Preferences → Java → Editor → Folding  
+![screenshot](https://raw.github.com/tlcsdm/eclipse-folding/master/plugins/com.tlcsdm.eclipse.folding/help/images/pref.png)
 
 ## Build
 

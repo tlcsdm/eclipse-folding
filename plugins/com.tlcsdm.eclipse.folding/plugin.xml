@@ -8,5 +8,9 @@
             class="com.tlcsdm.eclipse.folding.java.EnhancedJavaFoldingStructureProvider"
             name="Tlcsdm Java Folding"
             id="com.tlcsdm.eclipse.folding.provider1"/>
-   </extension>   
+   </extension>
+   
+    <extension point="org.eclipse.help.toc">
+        <toc file="help/help_toc.xml" primary="true"/>
+    </extension>
 </plugin>

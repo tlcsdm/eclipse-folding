@@ -31,8 +31,10 @@ public class Images {
 				FoldingPlugin.imageDescriptorFromPlugin("com.tlcsdm.eclipse.folding", "icons/theme/expanded.gif"));
 
 		// TODO - constantify these
-		registry.put("CHECKED", ImageDescriptor.createFromFile(FoldingPlugin.class, "icons/checked.gif"));
-		registry.put("UNCHECKED", ImageDescriptor.createFromFile(FoldingPlugin.class, "icons/unchecked.gif"));
+		registry.put("CHECKED",
+				FoldingPlugin.imageDescriptorFromPlugin("com.tlcsdm.eclipse.folding", "icons/checked.gif"));
+		registry.put("UNCHECKED",
+				FoldingPlugin.imageDescriptorFromPlugin("com.tlcsdm.eclipse.folding", "icons/unchecked.gif"));
 	}
 
 	public Image getImage(String key) {

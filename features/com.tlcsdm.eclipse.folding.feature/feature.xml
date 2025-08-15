@@ -7,7 +7,7 @@
       plugin="com.tlcsdm.eclipse.folding">
 
    <description>
-      This plugin integrates translation capabilities into the Eclipse IDE.
+      This plugin enhances code folding in Eclipse IDE.
    </description>
 
    <copyright>

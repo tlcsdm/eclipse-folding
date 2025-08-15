@@ -1,49 +1,44 @@
 <html>
   <head>
-    <title>Translation Plug-in Introduction</title>
+    <title>Folding Plug-in Introduction</title>
     <link rel="stylesheet" href="book.css" charset="ISO-8859-1" type="text/css">
   </head>
   <body>
     <h1>Introduction</h1>
       <p>
-        Welcome to the documentation for the <strong>Eclipse Translation</strong> plugin. 
-		This tool enables seamless text translation directly within the Eclipse IDE.
+        Welcome to the documentation for the <strong>Eclipse Folding</strong> plugin. 
+		This plugin enhances code folding in Eclipse IDE, based on and maintained from Coffee-Bytes Code Folding.  
+		It allows defining custom foldable regions in Java, XML, and other files using //[start] … //[end] comments, making code more organized and easier to navigate.
       </p>  
+	  
+	  <h2>Features</h2>
+	  <ul>
+	    <li>Folding support for <em>classes, methods, field groups, imports, comments, and documentation</em>.</li>
+		<li>Custom Region Folding: Define your own folding markers (default [start] / [end]).</li>
+	    <li>Deep integration with Eclipse JDT folding preferences to enable/disable folding for specific elements.</li>
+	    <li><strong>Fold/Unfold All</strong> and <strong>hierarchical folding/unfolding</strong> commands.</li>
+	    <li>Customizable folding strategies in Preferences: Configure in Window → Preferences → Java → Editor → Folding.</li>
+	    <li>Preserves Native Folding: Extends Eclipse’s folding system without removing built-in features.</li>
+	  </ul>
       
-      <h2>Usage</h2>
-	  <h2>1. Translate Selected Text</h2>
-	   <p>
-	     Select any text in an editor, then either:
-	   </p>
-	   <ul>
-	     <li>Right-click and choose <strong>Translate</strong></li>
-	     <li>Or press the shortcut: <strong>Ctrl + Alt + T</strong></li>
-	   </ul>
-	   <p>The translation result will be shown in a popup window.</p>
-	   <img src="images/popup.png" alt="Popup Translation Example">
-
-	   <h2>2. Translation View</h2>
-	   <p>
-	     You can also use the dedicated Translation View:
-	   </p>
-	   <ul>
-	     <li>Go to <strong>Window &gt; Show View &gt; Other...</strong></li>
-	     <li>Then select <strong>Plug-in Development &gt; Translation View</strong></li>
-	   </ul>
-	   <img src="images/translate_view.png" alt="Translation View">
-
-	   <h2>3. Switch Translation Provider from Status Bar</h2>
-	   <p>
-		You can quickly switch translation platforms from the right side of the Eclipse status bar.
-		This selection is <strong>synchronized</strong> with the preferences. Any change made here will
-		be reflected in the Preferences settings and vice versa.
-	   </p>
-	   <img src="images/status.png" alt="Status Bar Provider Selector">
+	  <h2>Usage</h2>
+	  <h3>Folding/Unfolding in Java Editor</h3>
+	  <ul>
+	    <li>Use the folding markers (triangles) in the editor margin.</li>
+	    <li>Use the <kbd>Source</kbd> menu or shortcuts for batch operations.</li>
+	  </ul>
+	  <h3>Selecting Folding Provider</h3>
+	  <ol>
+	    <li>Go to <kbd>Window ▸ Preferences ▸ Java ▸ Editor ▸ Folding</kbd>.</li>
+	    <li>Select the <strong>Tlcsdm Java Folding</strong> provider.</li>
+	    <li>Enable initial folding for specific elements as needed.</li>
+	  </ol>
+	  <img src="images/pref.png" alt="Usage">
 
       <h2>Support/Bugs/Feature Requests</h2>
       <p>
         If you have some thoughts about OpenExplorer, be it a bug report a feature request
-        or whatever, use <a href="https://github.com/tlcsdm/eclipse-translation/issues">issues section</a>
+        or whatever, use <a href="https://github.com/tlcsdm/eclipse-folding/issues">issues section</a>
         of the project's GitHub page. If the plug-in does not work properly in your
         environment or if you have an idea for a nice feature that would be suitable
         for this plug-in, just go ahead and tell me.
