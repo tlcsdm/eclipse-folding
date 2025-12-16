@@ -5,6 +5,8 @@ It allows defining custom foldable regions in Java, XML, and other files using /
 
 Fork of the coffee-bytes code folding plugin. Original source: https://code.google.com/archive/p/coffee-bytes/
 
+Now Support Eclipse 2024-06 and later, Mac OS X, Linux (with nautilus) and Windows.
+
 ## Features
 - Folding support for <em>classes, methods, field groups, imports, comments, and documentation</em>.
 - Custom Region Folding: Define your own folding markers (default [start] / [end]).
