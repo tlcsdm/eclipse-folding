@@ -33,7 +33,6 @@ public class ImageLookupKey {
 	}
 
 	@Override
-
 	public int hashCode() {
 		return 11 + resourcePath.hashCode() + resourceClass.hashCode();
 	}
