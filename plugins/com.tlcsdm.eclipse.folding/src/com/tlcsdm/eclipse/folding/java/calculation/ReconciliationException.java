@@ -8,6 +8,8 @@ package com.tlcsdm.eclipse.folding.java.calculation;
  */
 public class ReconciliationException extends RuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	// {{ Default constructors
 	// {{ sub constructors
 	public ReconciliationException(String message) {

@@ -33,8 +33,7 @@ public class DefaultAnnotationThemeFactory extends AnnotationThemeFactory {
 	}
 
 	private String getCurrentImageKey() {
-		String key = FoldingPlugin.getPrefs().getString(PreferenceKeys.FOLDING_ICONS);
-		return key;
+		return FoldingPlugin.getPrefs().getString(PreferenceKeys.FOLDING_ICONS);
 	}
 
 }

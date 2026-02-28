@@ -3,6 +3,8 @@ package com.tlcsdm.eclipse.folding;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -39,8 +41,7 @@ public class FoldingPlugin extends AbstractUIPlugin {
 			Defaults.applyDefaults(getPrefs());
 			javaDomain = new JavaSettings(getPrefs());
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+			log(IStatus.ERROR, "Error initializing FoldingPlugin", e);
 		}
 
 	}
@@ -96,8 +97,7 @@ public class FoldingPlugin extends AbstractUIPlugin {
 	}
 
 	public static boolean getBoolean(String key) {
-		boolean result = FoldingPlugin.getPrefs().getBoolean(key);
-		return result;
+		return FoldingPlugin.getPrefs().getBoolean(key);
 	}
 
 	/**
@@ -115,5 +115,16 @@ public class FoldingPlugin extends AbstractUIPlugin {
 		}
 
 		return resourceBundle;
+	}
+
+	/**
+	 * Logs a message with the given severity to the plugin's log.
+	 *
+	 * @param severity one of IStatus severity constants
+	 * @param message  the message to log
+	 * @param e        the exception to log, or null
+	 */
+	public static void log(int severity, String message, Throwable e) {
+		getDefault().getLog().log(new Status(severity, "com.tlcsdm.eclipse.folding", message, e));
 	}
 }

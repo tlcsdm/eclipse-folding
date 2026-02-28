@@ -37,7 +37,7 @@ public class StopWatch {
 
 	public long endAndReport() {
 		long result = end();
-		StringBuffer msg = new StringBuffer();
+		StringBuilder msg = new StringBuilder();
 		if (name != null) {
 			msg.append(name).append(": ");
 		}

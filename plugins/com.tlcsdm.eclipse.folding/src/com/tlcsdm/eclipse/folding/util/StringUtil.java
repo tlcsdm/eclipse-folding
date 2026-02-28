@@ -9,14 +9,14 @@ import java.util.regex.Pattern;
  */
 public class StringUtil {
 
-	private static final Pattern ALPHA_NUMERIC_PATTERN = Pattern.compile("[0-9A-Za-z]");
+	private static final Pattern ALPHA_NUMERIC_PATTERN = Pattern.compile("^[0-9A-Za-z]+$");
 
 	public static String innerTrim(String s) {
 		return removeDuplicates(s, ' ');
 	}
 
 	public static String removeDuplicates(String s, char c) {
-		StringBuffer newResult = new StringBuffer();
+		StringBuilder newResult = new StringBuilder();
 
 		boolean removing = false;
 		for (int i = 0; i < s.length(); i++) {
@@ -28,7 +28,7 @@ public class StringUtil {
 				}
 			} else {
 				removing = false;
-				newResult.append(c);
+				newResult.append(aChar);
 			}
 		}
 		return newResult.toString();

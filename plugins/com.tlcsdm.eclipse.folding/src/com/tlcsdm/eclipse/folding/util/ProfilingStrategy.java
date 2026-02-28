@@ -78,7 +78,7 @@ public class ProfilingStrategy implements RegionCalculationStrategy {
 	private void notify(String method, long start, long end) {
 		totalTime += (end - start);
 
-		StringBuffer bfr = new StringBuffer();
+		StringBuilder bfr = new StringBuilder();
 		if (name != null)
 			bfr.append(name).append(' ');
 

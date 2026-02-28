@@ -11,7 +11,7 @@ public class EnhancedPosition extends Position {
 	}
 
 	public String toString() {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 		result.append("[").append(getOffset()).append(",").append(getLength()).append("] - Metadata: ")
 				.append(metadata);
 		return result.toString();

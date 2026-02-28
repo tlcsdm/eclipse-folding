@@ -49,9 +49,7 @@ public class IntStack {
 	public void push(int newVal) {
 		if (values.length == cursor) {
 			int[] newArry = new int[values.length + increment];
-			for (int i = 0; i < values.length; i++) {
-				newArry[i] = values[i];
-			}
+			System.arraycopy(values, 0, newArry, 0, values.length);
 			values = newArry;
 		}
 

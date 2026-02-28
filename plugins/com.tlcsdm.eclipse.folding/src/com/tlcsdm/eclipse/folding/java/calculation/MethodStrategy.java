@@ -98,27 +98,15 @@ public class MethodStrategy extends AbstractBlockStrategy {
 	}
 
 	private boolean isMainMethod(IMethod elem) throws JavaModelException {
-		// StopWatch watch = new StopWatch("isMainMethod");
-//		watch.start();
-		boolean result = elem.isMainMethod();
-		// watch.endAndReport();
-		return result;
+		return elem.isMainMethod();
 	}
 
 	private boolean isConstructor(IMethod elem) throws JavaModelException {
-//		StopWatch watch = new StopWatch("isConstructor");
-//		watch.start();
-		boolean result = elem.isConstructor();
-//		watch.endAndReport();
-		return result;
+		return elem.isConstructor();
 	}
 
 	private boolean isGetterOrSetter(IMethod elem) throws JavaModelException {
-//		StopWatch watch = new StopWatch("isGetterOrSetter");
-//		watch.start();
-		boolean result = JDTUtil.isGetterOrSetter(elem);
-//		watch.endAndReport();
-		return result;
+		return JDTUtil.isGetterOrSetter(elem);
 	}
 
 }

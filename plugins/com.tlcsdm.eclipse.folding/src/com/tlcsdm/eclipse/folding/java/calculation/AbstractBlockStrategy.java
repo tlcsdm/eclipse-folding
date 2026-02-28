@@ -2,6 +2,7 @@ package com.tlcsdm.eclipse.folding.java.calculation;
 
 import java.util.Set;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.compiler.ITerminalSymbols;
@@ -70,7 +71,7 @@ public abstract class AbstractBlockStrategy extends AbstractCalculationStrategy 
 							new JavaPositionMetadata(false, shouldNegate, doCollapse, true, getClass().getName())));
 				}
 			} else {
-				System.out.println("Bad brace found... omitting!");
+				FoldingPlugin.log(IStatus.WARNING, "Bad brace found... omitting!", null);
 			}
 
 			break;

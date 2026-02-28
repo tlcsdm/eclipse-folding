@@ -25,7 +25,6 @@ public class ImageWidget {
 	public Control getControl(Composite owner) {
 		Canvas canvas = new Canvas(owner, SWT.NONE);
 		canvas.addPaintListener(new PaintListener() {
-			Rectangle imgBounds = image.getBounds();
 
 			public void paintControl(PaintEvent e) {
 				Rectangle imgBounds = image.getBounds();
