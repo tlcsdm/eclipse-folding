@@ -79,7 +79,7 @@ public abstract class AbstractCalculationStrategy implements RegionCalculationSt
 
 	public String toString() {
 		// produce helpful message.
-		StringBuffer msg = new StringBuffer();
+		StringBuilder msg = new StringBuilder();
 		String nme = getClass().getName();
 		msg.append(nme.substring(nme.lastIndexOf(".")));
 		msg.append(" - [\n");

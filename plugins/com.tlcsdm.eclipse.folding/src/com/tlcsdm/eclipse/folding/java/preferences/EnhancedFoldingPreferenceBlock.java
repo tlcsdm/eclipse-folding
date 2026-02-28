@@ -7,7 +7,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
-import org.eclipse.swt.widgets.Text;
 
 import com.tlcsdm.eclipse.folding.FoldingPlugin;
 import com.tlcsdm.eclipse.folding.preferences.PreferencesTab;
@@ -21,10 +20,6 @@ public class EnhancedFoldingPreferenceBlock implements IJavaFoldingPreferenceBlo
 
 	private IPreferenceStore preferences;
 	private PreferencesMediator mediator;
-
-	private Text minimumLines;
-	private Text startUserDefine;
-	private Text endUserDefine;
 
 	public EnhancedFoldingPreferenceBlock() {
 		preferences = FoldingPlugin.getDefault().getPreferenceStore();

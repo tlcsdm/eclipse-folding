@@ -62,6 +62,7 @@ public class UserDefinedReaderWriter {
 	private void write(StreamResult result, Collection entries) throws IOException {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document document = builder.newDocument();
 
@@ -70,18 +71,15 @@ public class UserDefinedReaderWriter {
 
 			for (Iterator iter = entries.iterator(); iter.hasNext();) {
 				UserDefinedEntry entry = (UserDefinedEntry) iter.next();
-				String name = entry.getName();
-				boolean isFold = entry.isFold();
-				boolean isCollapse = entry.isCollapse();
 				Node region = document.createElement(REGION);
 				root.appendChild(region);
 				NamedNodeMap attrs = region.getAttributes();
 				Attr nameAttr = document.createAttribute(NAME_ATTR);
 				nameAttr.setValue(entry.getName());
 				Attr foldAttr = document.createAttribute(IS_FOLD_ATTR);
-				foldAttr.setValue(String.valueOf(isFold));
+				foldAttr.setValue(String.valueOf(entry.isFold()));
 				Attr collapseAttr = document.createAttribute(IS_COLLAPSE_ATTR);
-				collapseAttr.setValue(String.valueOf(isCollapse));
+				collapseAttr.setValue(String.valueOf(entry.isCollapse()));
 				attrs.setNamedItem(nameAttr);
 				attrs.setNamedItem(foldAttr);
 				attrs.setNamedItem(collapseAttr);
@@ -110,6 +108,9 @@ public class UserDefinedReaderWriter {
 		try {
 			List results = new ArrayList();
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
 			DocumentBuilder parser = factory.newDocumentBuilder();
 			Document document = parser.parse(in);
 
@@ -129,10 +130,9 @@ public class UserDefinedReaderWriter {
 			}
 			return results;
 		} catch (SAXException e) {
-			e.printStackTrace();
-			throw new IOException("Unable to read user defined properties.");
+			throw new IOException("Unable to read user defined properties.", e);
 		} catch (ParserConfigurationException e) {
-			throw new IOException("Unable to read user defined properties.");
+			throw new IOException("Unable to read user defined properties.", e);
 		}
 	}
 

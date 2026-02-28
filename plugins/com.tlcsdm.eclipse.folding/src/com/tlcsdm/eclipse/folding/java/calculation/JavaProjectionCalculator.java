@@ -55,7 +55,7 @@ public class JavaProjectionCalculator {
 		try {
 			Map result = new HashMap();
 
-			findAnnotations((IJavaElement) parentElement, result);
+			findAnnotations(parentElement, result);
 			return result;
 		} catch (JavaModelException e) {
 		} catch (InvalidInputException e) {
@@ -75,9 +75,6 @@ public class JavaProjectionCalculator {
 	 */
 	private Set findAnnotations(IJavaElement elem, Map result)
 			throws JavaModelException, InvalidInputException, BadLocationException {
-
-		boolean doCollapse = false;
-		int elemType = elem.getElementType();
 
 		Set regions = null;
 		try {
@@ -138,7 +135,7 @@ public class JavaProjectionCalculator {
 		Iterator children = childSet.iterator();
 		while (children.hasNext()) {
 			EnhancedPosition childRegion = (EnhancedPosition) children.next();
-			if (parentRegion.collidesWith(childRegion) || childRegion.contains(parentRegion)
+			if ((parentRegion.collidesWith(childRegion) || childRegion.contains(parentRegion))
 					&& !((JavaPositionMetadata) parentRegion.getMetadata()).isUserDefined()) {
 				return true;
 			}

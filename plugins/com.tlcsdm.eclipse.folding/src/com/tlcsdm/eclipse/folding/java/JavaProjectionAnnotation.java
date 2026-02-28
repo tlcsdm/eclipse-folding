@@ -1,11 +1,13 @@
 package com.tlcsdm.eclipse.folding.java;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.ISourceRange;
 import org.eclipse.jdt.core.ISourceReference;
 
 import com.tlcsdm.eclipse.folding.CBProjectionAnnotation;
 import com.tlcsdm.eclipse.folding.EnhancedPosition;
+import com.tlcsdm.eclipse.folding.FoldingPlugin;
 
 /**
  * A Java projection object.
@@ -30,7 +32,7 @@ public class JavaProjectionAnnotation extends CBProjectionAnnotation {
 	}
 
 	private String computeSource() {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 		try {
 			ISourceReference ref = (ISourceReference) owner;
 			ISourceRange range = ref.getSourceRange();
@@ -55,7 +57,7 @@ public class JavaProjectionAnnotation extends CBProjectionAnnotation {
 			result.append(ref.getSource().substring(offset, offset + len));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			FoldingPlugin.log(IStatus.WARNING, "Error computing source for projection annotation", e);
 		}
 		return result.toString();
 

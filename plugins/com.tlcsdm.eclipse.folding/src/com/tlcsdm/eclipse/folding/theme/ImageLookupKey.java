@@ -23,17 +23,16 @@ public class ImageLookupKey {
 		return resourcePath;
 	}
 
+	@Override
 	public boolean equals(Object o) {
-		boolean result;
-		result = (o.getClass().equals(getClass()));
-
-		if (result) {
-			ImageLookupKey other = (ImageLookupKey) o;
-			result = this.resourceClass.equals(other.resourceClass) && this.resourcePath.equals(other.resourcePath);
+		if (o == null || !o.getClass().equals(getClass())) {
+			return false;
 		}
-		return result;
+		ImageLookupKey other = (ImageLookupKey) o;
+		return this.resourceClass.equals(other.resourceClass) && this.resourcePath.equals(other.resourcePath);
 	}
 
+	@Override
 	public int hashCode() {
 		return 11 + resourcePath.hashCode() + resourceClass.hashCode();
 	}

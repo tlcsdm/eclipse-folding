@@ -12,10 +12,9 @@ public class GridDataFactory {
 
 	private static GridData excessWidthData;
 	static {
-		GridData excessWidthData = new GridData();
+		excessWidthData = new GridData();
 		excessWidthData.grabExcessHorizontalSpace = true;
 		excessWidthData.horizontalAlignment = GridData.HORIZONTAL_ALIGN_END;
-
 	}
 
 	/**

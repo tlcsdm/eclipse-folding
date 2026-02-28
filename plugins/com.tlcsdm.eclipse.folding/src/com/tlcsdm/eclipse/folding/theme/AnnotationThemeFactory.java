@@ -1,8 +1,5 @@
 package com.tlcsdm.eclipse.folding.theme;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.jface.text.source.projection.ProjectionAnnotation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
@@ -18,11 +15,7 @@ public abstract class AnnotationThemeFactory {
 
 	private static final DefaultAnnotationRangeIndicator defaultRangeIndicator = new DefaultAnnotationRangeIndicator();
 
-	private static Map images = new HashMap();
-
 	private static DefaultAnnotationThemeFactory defaultAnnotations = new DefaultAnnotationThemeFactory();
-
-	private static boolean disposerRegistered;
 
 	/**
 	 * Factory method for selecting a factory based on the annotation object.
