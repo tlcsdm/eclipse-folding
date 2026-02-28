@@ -4,6 +4,8 @@ import org.eclipse.jface.text.source.projection.ProjectionAnnotation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
+import com.tlcsdm.eclipse.folding.FoldingPlugin;
+
 /**
  * Selects theme controls based on the format of the annotation provided.
  * 
